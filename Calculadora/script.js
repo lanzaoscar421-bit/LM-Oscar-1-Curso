@@ -8,6 +8,7 @@ const btnRestar =  document.getElementById("btnRestar");
 const btnMultiplicar =  document.getElementById("btnMultiplicar");
 const btnDividir =  document.getElementById("btnDividir");
 const btnPotencia =  document.getElementById("btnPotencia");
+const btnResto =  document.getElementById("btnResto");
 const btnLimpiar = document.getElementById("btnLimpiar");
 
 //Zona resultado-Mensaje
@@ -71,9 +72,12 @@ function division(a,b){
     return a/b;
 }
 
-function btnPotencia (a,b){
+function Potencia (a,b){
     //
     return a**b;
+}
+function resto (a,b){
+    return a % b;
 }
 
 //Mostramos datos por pantalla 
@@ -160,9 +164,14 @@ btnDividir.addEventListener("click", function () {
 
 });
 
-bt.addEventListener("click", function () {
+btnPotencia.addEventListener("click", function () {
 
-    ejecutarOperacion(potencia);
+    ejecutarOperacion(Potencia);
+
+});
+btnResto.addEventListener("click", function () {
+
+    ejecutarOperacion(resto);
 
 });
 
