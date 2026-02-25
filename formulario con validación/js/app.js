@@ -31,7 +31,7 @@ function validarNombre(){
 
     const nombre = leerTexto(inputNombre);
 
-    if (nombre.leght<2 || nombre.leght>20){
+    if (nombre.lenght<2 || nombre.lenght>30){
         
         return false;
     }
@@ -87,9 +87,9 @@ function validarEmail(){
 
 function validarTelefono (){
 
-    const telefono = leerTexto(inputEmail);
+    const telefono = leerTexto(inputTelefono);
 
-    const telefonoDigitos = /\d/;
+    const telefonoDigitos = /^\d{9}$/;
 
 
     if(telefono>9 || telefono<9){
@@ -111,7 +111,24 @@ function validarTelefono (){
 
 function validarFechaNacimiento(){
 
+    const fechaNacimiento = leerTexto(inputFechaNacimiento);
+    const hoy = new Date();
 
+
+
+    let edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+
+
+    const mes = hoy.getMonth() - fechaNacimiento.getMonth();
+
+
+
+    if(edad => 18){
+
+        return true;
+    }
+
+    return false;
 
 }
 
