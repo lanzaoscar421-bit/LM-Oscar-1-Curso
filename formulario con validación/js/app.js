@@ -12,6 +12,14 @@ const inputTelefono = document.getElementById("telefono");
 const inputFechaNacimiento = document.getElementById("fechaNacimiento");
 const inputProvincia = document.getElementById("provincia");
 
+//Seguridad
+const inputPassword = document.getElementById("password");
+const inputPassword2 = document.getElementById("password2");
+
+//Formulario
+const form = document.getElementById("formRegistro");
+const btnReset = document.getElementById("btnReset");
+
 
 
 
@@ -23,6 +31,23 @@ function leerTexto(input){
 
 }
 
+
+//Funcion Interfaz
+function mostrarError(idError, mensaje){
+    document.getElementById(idError).textContent = mensaje;
+}
+
+function limpiarError(idError){
+    document.getElementById(idError).textContent = "";
+}
+
+function actualizarEstadoGeneral(texto, correcto){
+    const estado = document.getElementById("estadoTexto");
+    estado.textContent = texto;
+    estado.style.color = correcto ? "green" : "red";
+}
+
+
 //Primera fila
 
 //Funcion para validar el nombre
@@ -30,6 +55,7 @@ function leerTexto(input){
 function validarNombre(){
 
     const nombre = leerTexto(inputNombre);
+    limpiarError("error nombre");
 
     if (nombre.lenght<2 || nombre.lenght>30){
         
@@ -52,6 +78,7 @@ function validarNombre(){
 function validarApellidos(){
 
     const apellidos = leerTexto(inputApellidos);
+    limpiarError("errorApellidos");
 
 
     if(apellidos.leght<2 || apellidos.leght>60){
@@ -72,6 +99,7 @@ function validarApellidos(){
 function validarEmail(){
 
     const email = leerTexto(inputEmail);
+    limpiarError("errorEmail");
 
     const caracteresEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -87,6 +115,7 @@ function validarEmail(){
 
 function validarTelefono (){
 
+    limpiarError("errorTelefono");
     const telefono = leerTexto(inputTelefono);
 
     const telefonoDigitos = /^\d{9}$/;
@@ -110,31 +139,69 @@ function validarTelefono (){
 //Funcion Validar Fecha de nacimiento
 
 function validarFechaNacimiento(){
+    limpiarError("errorFecha");
 
-    const fechaNacimiento = leerTexto(inputFechaNacimiento);
-    const hoy = new Date();
-
-
-
-    let edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
-
-
-    const mes = hoy.getMonth() - fechaNacimiento.getMonth();
-
-
-
-    if(edad => 18){
-
-        return true;
+    if(!inputFechaNacimiento.value){
+        mostrarError("errorFecha","Selecciona una fecha");
+        return false;
     }
 
-    return false;
+    const fechaNacimiento = new Date(inputFechaNacimiento.value);
+    const hoy = new Date();
 
+    let edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+    const mes = hoy.getMonth() - fechaNacimiento.getMonth();
+
+    if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())){
+        edad--;
+    }
+
+    if(edad < 18){
+        mostrarError("errorFecha","Debes ser mayor de edad");
+        return false;
+    }
+
+    return true;
 }
-
 
 //Funcion para validar Provincia
 
 function validarProvincia(){
 
+     limpiarError("errorProvincia");
+
+    if(inputProvincia.value === ""){
+        mostrarError("errorProvincia","Selecciona una provincia");
+        return false;
+    }
+
+    return true;
+}
+
+//Validar contraseña1
+
+function validarPassword(){
+    const pass = leerTexto(inputPassword);
+
+    limpiarError("error password");
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+
+    if(!regex.test(pass)){
+        mostrarError("errorPassword","Mín 8 + mayúscula + minúscula + número + símbolo");
+        return false;
+    }
+
+    return true;
+}
+
+
+//Validar contraseña2
+
+function validarPassword2(){
+    limpiarError("errorPassword2");
+
+    if(leerTexto(inputPassword2) !== leerTexto(inputPassword)){
+        mostrarError("errorPassword2","No coinciden");
+        return false;
+    }
 }
