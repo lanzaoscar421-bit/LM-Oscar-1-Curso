@@ -205,3 +205,62 @@ function validarPassword2(){
         return false;
     }
 }
+
+//Observaciobnes
+function validarObservaciones(){
+    limpiarError("errorObs");
+
+    if(leerTexto(inputObservaciones).length > 200){
+        mostrarError("errorObs","Máx 200 caracteres");
+        return false;
+    }
+
+    return true;
+}
+
+
+//Validar terminos
+
+function validarTerminos(){
+    limpiarError("errorTerminos");
+
+    if(!inputTerminos.checked){
+        mostrarError("errorTerminos","Debes aceptar términos");
+        return false;
+    }
+
+    return true;
+}
+
+//Limpiar formulario
+function limpiarFormulario(){
+    limpiarError("errorNombre");
+    limpiarError("errorApellidos");
+    limpiarError("errorEmail");
+    limpiarError("errorTelefono");
+    limpiarError("errorFecha");
+    limpiarError("errorProvincia");
+    limpiarError("errorPassword");
+    limpiarError("errorPassword2");
+    limpiarError("errorObs");
+    limpiarError("errorTerminos");
+
+    generarResumenErrores([]);
+    actualizarEstadoGeneral("Pendiente de validación", false);
+}
+
+
+//Eventos
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    if(validarFormulario()){
+        alert("Formulario enviado correctamente");
+        form.reset();
+        limpiarFormulario();
+    }
+});
+
+btnReset.addEventListener("click", function(){
+    limpiarFormulario();
+});
