@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    color: #555;
+}
+
+.ejercicio {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+
+#caja-color {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#area-raton {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e0e0;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+
+button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+span {
+    font-weight: bold;
+    margin-left: 10px;
+}

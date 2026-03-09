@@ -1,0 +1,22 @@
+.container {  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.5fr 2.6fr 0.4fr;
+  gap: 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Primeros Platos Segundos Platos"
+    "Nombre de los Platos Precios"
+    "aviso Lega aviso Lega";
+}
+
+.Primeros Platos { grid-area: Primeros Platos; }
+
+.Segundos Platos { grid-area: Segundos Platos; }
+
+.Nombre de los Platos { grid-area: Nombre de los Platos; }
+
+.Precios { grid-area: Precios; }
+
+.aviso Lega { grid-area: aviso Lega; }
+
+
