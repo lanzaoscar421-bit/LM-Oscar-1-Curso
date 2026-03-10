@@ -1,4 +1,7 @@
 
+body{
+    background-color: rgb(160, 228, 228);
+}
 
 .container {  
   display: flex;
@@ -26,6 +29,7 @@
 .Ej2 { 
     grid-area: Ej2; 
     border: 1px solid;
+    text-align: center;
 }
 
 .EJ3 { 
