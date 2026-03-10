@@ -1,7 +1,5 @@
 
 console.log("mi script funcina");
-document.addEventListener('DOMContentLoaded')
-document.addEventListener('');
 
 
 //constantes, variable
@@ -56,6 +54,16 @@ Boton2.addEventListener('click', () => {
 
 
 //Cuarto Ejercicio
+
+
+const id = document.getElementById('id')
+
+Boton4.addEventListener('click', () => {
+    console.log('¡El botón 2 fue presionado!');
+
+    
+    id.style.backgroundColor = "green"
+})
 
 
 //Quinto Ejercicio
