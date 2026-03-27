@@ -1,3 +1,4 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -90,21 +91,21 @@ button {
     transition: 0.2s;
 }
 
-#btnAgregar {
+#btnAñadir {
     background-color: #2563eb;
     color: white;
 }
 
-#btnAgregar:hover {
+#btnAñadir:hover {
     background-color: #1d4ed8;
 }
 
-.secundario {
+#btnLimpiar {
     background-color: #e2e8f0;
     color: #1e293b;
 }
 
-.secundario:hover {
+#btnLimpiar:hover {
     background-color: #cbd5e1;
 }
 
@@ -148,7 +149,7 @@ button {
     gap: 12px;
 }
 
-.tarea {
+.estudiante {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -158,33 +159,32 @@ button {
     padding: 14px 16px;
 }
 
-.tarea span {
+.estudiante span {
     font-size: 1rem;
 }
 
-.tarea.completada span {
-    text-decoration: line-through;
-    color: #64748b;
-}
-
-.acciones-tarea {
+.acciones-estudiante {
     display: flex;
     gap: 10px;
 }
 
-.btn-accion {
+.acciones-estudiante button {
     padding: 8px 12px;
     border-radius: 8px;
     font-size: 0.85rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
 }
 
-.btn-completar {
+/* Botones específicos */
+.btn-asiste {
     background-color: #31ccb2;
     color: white;
 }
 
-.btn-completar:hover {
-    background-color: #99c9ca;
+.btn-asiste:hover {
+    background-color: #26a08a;
 }
 
 .btn-eliminar {
@@ -196,18 +196,38 @@ button {
     background-color: #c76464;
 }
 
+.btn-noAsiste {
+    background-color: #fbbf24;
+    color: #1e293b;
+}
+
+.btn-noAsiste:hover {
+    background-color: #f59e0b;
+}
+
+/* Estados de estudiante */
+.estudiante.asistio {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.estudiante.noAsistio {
+    background-color: #fff3cd;
+    color: #857204;
+}
+
 @media (max-width: 768px) {
     .zona-info {
         grid-template-columns: 1fr;
     }
 
-    .tarea {
+    .estudiante {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
     }
 
-    .acciones-tarea {
+    .acciones-estudiante {
         width: 100%;
         justify-content: flex-end;
     }
