@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Estudiantes</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <main class="contenedor">
+        <section class="panel">
+
+            <header class="cabecera">
+                <h1>Registro de Estudiantes</h1>
+                <p>Ejercicio de práctica con JavaScript</p>
+            </header>
+
+            <section class="zona-formulario">
+                <div class="grupo-input">
+                    <label for="nuevoEstudiante">Nuevo Estudiante</label>
+                    <input type="text" id="nuevoEstudiante" placeholder="Escribe un nuevo estudiante">
+                </div>
+
+                <div class="botones">
+                    <button id="btnAñadir">Añadir Estudiante</button>
+                    <button id="btnLimpiar" class="secundario">Vaciar Lista</button>
+                </div>
+            </section>
+
+            <section class="zona-info">
+                <div class="tarjeta-info">
+                    <span class="etiqueta">Total</span>
+                    <span id="totalEstudiantes" class="valor">0</span>
+                </div>
+
+                <div class="tarjeta-info">
+                    <span class="etiqueta">Asistieron</span>
+                    <span id="asistieron" class="valor">0</span>
+                </div>
+
+                <div class="tarjeta-info">
+                    <span class="etiqueta">No asistieron</span>
+                    <span id="noAsistieron" class="valor">0</span>
+                </div>
+            </section>
+
+            <section class="zona-lista">
+                <h2>Estudiantes Registrados</h2>
+                <ul id="listaEstudiantes" class="lista-tareas">
+                    <!-- Los estudiantes se añadirán con JavaScript -->
+                </ul>
+            </section>
+
+        </section>
+    </main>
+
+</body>
+</html>
