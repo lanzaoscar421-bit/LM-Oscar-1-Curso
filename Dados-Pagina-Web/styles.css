@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at top, #1a002b, #0a0014);
+    color: #e9d5ff;
+    min-height: 100vh;
+    padding: 30px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #12001f;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
+    overflow: hidden;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+/* CABECERA */
+.cabecera {
+    background: linear-gradient(135deg, #6d28d9, #a855f7);
+    color: white;
+    padding: 35px 30px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.7);
+}
+
+.cabecera h1 {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    text-shadow: 0 0 10px #c084fc;
+}
+
+.cabecera p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* ZONA PRINCIPAL */
+.zona-practica {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 25px;
+    padding: 30px;
+}
+
+/* PANELES */
+.panel-control,
+.panel-resultado,
+.panel-referencia {
+    background-color: #1a002b;
+    border-radius: 16px;
+    padding: 25px;
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+}
+
+.panel-control h2,
+.panel-resultado h2,
+.panel-referencia h2 {
+    margin-bottom: 20px;
+    color: #c084fc;
+    font-size: 1.4rem;
+    text-shadow: 0 0 8px #a855f7;
+}
+
+/* BOTÓN */
+#btnLanzar {
+    width: 100%;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #9333ea, #c084fc);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 0 10px rgba(192, 132, 252, 0.6);
+}
+
+#btnLanzar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(192, 132, 252, 1);
+}
+
+/* CAJA TEXTO */
+.caja-texto {
+    min-height: 80px;
+    background-color: #0f001a;
+    border: 2px dashed #a855f7;
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: inset 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+/* CAJA IMAGEN */
+.caja-imagen {
+    width: 100%;
+    min-height: 320px;
+    background-color: #0f001a;
+    border: 2px solid #9333ea;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: inset 0 0 15px rgba(168, 85, 247, 0.4);
+}
+
+.caja-imagen img {
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px #c084fc);
+}
+
+/* REFERENCIA */
+.panel-referencia {
+    margin: 0 30px 30px 30px;
+}
+
+.texto-apoyo {
+    margin-bottom: 20px;
+    color: #d8b4fe;
+}
+
+/* GALERÍA */
+.galeria-dados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 18px;
+}
+
+/* CARTAS */
+.carta-dado {
+    background-color: #140022;
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    border-radius: 14px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.2s;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
+}
+
+.carta-dado:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px rgba(192, 132, 252, 0.8);
+}
+
+.carta-dado img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 8px #a855f7);
+}
+
+.carta-dado span {
+    display: block;
+    font-weight: bold;
+    color: #e9d5ff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .zona-practica {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-referencia {
+        margin: 0 30px 30px 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    .cabecera h1 {
+        font-size: 1.7rem;
+    }
+
+    .cabecera,
+    .zona-practica,
+    .panel-referencia {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .caja-imagen {
+        min-height: 220px;
+    }
+
+    .caja-imagen img {
+        max-width: 160px;
+    }
+}
