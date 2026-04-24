@@ -516,3 +516,29 @@ body.light .cart__list{
   gap: 10px;
   flex-wrap: wrap;
 }
+
+.cart__item{
+  display: grid;
+  grid-template-columns: 1fr 120px 120px auto;
+  gap: 10px;
+  padding: 10px;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.cart__item:last-child{
+  border-bottom: none;
+}
+
+.btn-eliminar{
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,45,45,0.15);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.btn-eliminar:hover{
+  background: rgba(255,45,45,0.3);
+}

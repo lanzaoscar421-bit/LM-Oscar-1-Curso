@@ -54,7 +54,7 @@ function mostrarCarrito() {
         listaCarrito.innerHTML += `
         <li class="cart-item">
             <span>${producto.nombre}</span>
-            <span>${producto.precio.toFixed(2)} €</span>
+            <span>${producto.precio} €</span>
             <span>${producto.cantidad}</span>
             <button class="btn-eliminar" data-id="${producto.id}">Eliminar</button>
         </li>
@@ -89,7 +89,7 @@ function calcularTotal() {
     }
 
     if (totalPrecio) {
-        totalPrecio.textContent = total.toFixed(2) + " €";
+        totalPrecio.textContent = total + " €";
     }
 }
 
