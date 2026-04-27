@@ -1,0 +1,321 @@
+/* =========================
+   Base + Variables (Tema Gaming)
+   ========================= */
+:root{
+  --bg: #0b0f14;
+  --surface: rgba(0, 255, 200, 0.08);
+  --surface-2: rgba(0, 255, 200, 0.12);
+  --text: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.70);
+  --border: rgba(0, 255, 200, 0.18);
+  --shadow: 0 10px 30px rgba(0,0,0,0.45);
+
+  --brand: #00ffd0;
+  --brand-2: #7c4dff;
+
+  --radius: 18px;
+  --radius-sm: 12px;
+
+  --maxw: 1120px;
+}
+
+/* Modo claro */
+body.light{
+  --bg: #f5f7fb;
+  --surface: rgba(10, 14, 20, 0.05);
+  --surface-2: rgba(10, 14, 20, 0.08);
+  --text: rgba(10, 14, 20, 0.92);
+  --muted: rgba(10, 14, 20, 0.65);
+  --border: rgba(10, 14, 20, 0.15);
+  --shadow: 0 10px 30px rgba(10,14,20,0.12);
+}
+
+/* =========================
+   Reset
+   ========================= */
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(0,255,200,0.18), transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(124,77,255,0.18), transparent 60%),
+    var(--bg);
+}
+
+img{ max-width: 100%; display: block; }
+
+.container{
+  width: min(var(--maxw), calc(100% - 32px));
+  margin: auto;
+}
+
+/* =========================
+   NAV
+   ========================= */
+.barraSuperior{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(10,14,20,0.55);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+body.light .barraSuperior{
+  background: rgba(255,255,255,0.7);
+}
+
+.menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo__img{
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+.logo__texto{
+  font-weight: 900;
+}
+
+/* Links */
+.menu__links{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.menu__link{
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: var(--muted);
+  border: 1px solid transparent;
+}
+
+.menu__link:hover{
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.menu__link--activo{
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+/* =========================
+   Toggle
+   ========================= */
+.toggleModo{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.toggleModo__track{
+  width: 44px;
+  height: 24px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+.toggleModo__thumb{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--text);
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  transform: translateY(-50%);
+}
+
+/* =========================
+   HERO
+   ========================= */
+.heroGame{
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+}
+
+.heroGame__info{
+  padding: 18px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.heroGame__promo{
+  padding: 18px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(0,255,200,0.2), rgba(124,77,255,0.2));
+  border: 1px solid var(--border);
+}
+
+/* =========================
+   CATÁLOGO
+   ========================= */
+.catalogo{
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+@media(max-width: 900px){
+  .catalogo{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media(max-width: 600px){
+  .catalogo{ grid-template-columns: 1fr; }
+}
+
+/* =========================
+   GAME CARD
+   ========================= */
+.gameCard{
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-rows: 160px auto;
+}
+
+.gameCard__img{
+  height: 160px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.gameCard__body{
+  padding: 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.gameCard__title{
+  font-weight: 900;
+}
+
+.gameCard__info{
+  color: var(--muted);
+}
+
+.priceTag{
+  font-weight: 900;
+}
+
+/* Botones */
+.gameCard__actions{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.btnAdd,
+.btnRemove,
+.btnFav{
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.btnAdd{
+  background: linear-gradient(135deg, #00ffd0, #7c4dff);
+  color: #000;
+}
+
+/* =========================
+   CARRITO
+   ========================= */
+.cartGame{
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.cartGame__head{
+  display: grid;
+  grid-template-columns: 1fr 120px 120px;
+  font-weight: 900;
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cartGame__list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-height: 120px;
+}
+
+.cartGame__total{
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-top: 1px solid var(--border);
+}
+
+/* =========================
+   CUPÓN
+   ========================= */
+.couponGame{
+  margin-top: 16px;
+}
+
+.couponGame__row{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+input{
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+.footerGame{
+  margin-top: 30px;
+  padding: 18px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}

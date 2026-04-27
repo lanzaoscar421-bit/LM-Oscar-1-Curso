@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GameZone | Catálogo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="barraSuperior">
+  <nav class="menu container">
+
+    <a class="logo" href="index.html">
+      <img class="logo__img" src="Imagenes/logo.jpg" alt="Logo" />
+      <span class="logo__texto">GameZone</span>
+    </a>
+
+    <div class="menu__links">
+      <a class="menu__link" href="carrito.html">Inventario</a>
+      <a class="menu__link" href="login.html">Acceso</a>
+
+      <button id="modoToggle" class="toggleModo" type="button">
+        <span class="toggleModo__track">
+          <span class="toggleModo__thumb"></span>
+        </span>
+        <span class="toggleModo__texto">Tema</span>
+      </button>
+    </div>
+
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="heroGame">
+    <div class="heroGame__info">
+      <h1>Elige tu videojuego</h1>
+    </div>
+
+    <div class="heroGame__promo">
+      <span class="promo__title">BONUS</span>
+      <span class="promo__text">Código secreto en inventario</span>
+    </div>
+  </section>
+
+  <section class="catalogo" aria-label="Juegos disponibles">
+
+    <!-- ITEM -->
+    <article class="gameCard" data-game-id="g01" data-game-name="Cyber Drift" data-game-price="59.99">
+      <img class="gameCard__img" src="Imagenes/game1.jpg" alt="Cyber Drift" />
+      <div class="gameCard__body">
+        <h3 class="gameCard__title">Cyber Drift</h3>
+        <p class="gameCard__info"><span class="priceTag">59,99 €</span> · Carreras futuristas</p>
+
+        <div class="gameCard__actions">
+          <button class="btnAdd" data-action="add">Comprar</button>
+          <button class="btnRemove" data-action="remove">Quitar</button>
+          <button class="btnFav" data-action="fav">Wishlist</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- ITEM 2 -->
+    <article class="gameCard" data-game-id="g02" data-game-name="Shadow Realm" data-game-price="49.99">
+      <img class="gameCard__img" src="Imagenes/game2.jpg" alt="Shadow Realm" />
+      <div class="gameCard__body">
+        <h3 class="gameCard__title">Shadow Realm</h3>
+        <p class="gameCard__info"><span class="priceTag">49,99 €</span> · RPG oscuro</p>
+
+        <div class="gameCard__actions">
+          <button class="btnAdd" data-action="add">Comprar</button>
+          <button class="btnRemove" data-action="remove">Quitar</button>
+          <button class="btnFav" data-action="fav">Wishlist</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- ITEM 3 -->
+    <article class="gameCard" data-game-id="g03" data-game-name="Pixel Warriors" data-game-price="29.99">
+      <img class="gameCard__img" src="Imagenes/game3.jpg" alt="Pixel Warriors" />
+      <div class="gameCard__body">
+        <h3 class="gameCard__title">Pixel Warriors</h3>
+        <p class="gameCard__info"><span class="priceTag">29,99 €</span> · Retro acción</p>
+
+        <div class="gameCard__actions">
+          <button class="btnAdd" data-action="add">Comprar</button>
+          <button class="btnRemove" data-action="remove">Quitar</button>
+          <button class="btnFav" data-action="fav">Wishlist</button>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+</main>
+
+<footer class="footerGame">
+  <div class="container">
+    <p>© 2026 GameZone</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

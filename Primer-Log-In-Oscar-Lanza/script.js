@@ -4,7 +4,6 @@ function iniciarPagina(){
 
     let inicioSesion = sessionStorage.getItem("inicioSesion");
     if (inicioSesion === "true"){
-
         return;
     }else{
         pedirDatos();

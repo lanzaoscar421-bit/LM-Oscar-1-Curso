@@ -1,0 +1,153 @@
+/* =========================
+   BASE
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f4f4;
+  color: #222;
+  transition: 0.3s;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+}
+
+/* =========================
+   NAV
+========================= */
+
+.topbar {
+  background: #333;
+  color: white;
+  padding: 15px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+/* =========================
+   BOTÓN MODO
+========================= */
+
+.toggle {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+/* =========================
+   GRID PRODUCTOS
+========================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card button {
+  margin-top: 10px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* =========================
+   CARRITO
+========================= */
+
+#cartList {
+  list-style: none;
+  margin-top: 15px;
+}
+
+#cartList li {
+  background: white;
+  padding: 10px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+
+.eliminar {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* =========================
+   TOTAL
+========================= */
+
+h2 {
+  margin-top: 15px;
+}
+
+/* =========================
+   FORM DESCUENTO
+========================= */
+
+form {
+  margin-top: 20px;
+}
+
+input {
+  padding: 8px;
+  width: 200px;
+}
+
+button {
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+/* =========================
+   MODO OSCURO
+========================= */
+
+body.oscuro {
+  background: #121212;
+  color: white;
+}
+
+body.oscuro .card {
+  background: #1e1e1e;
+  color: white;
+}
+
+body.oscuro #cartList li {
+  background: #1e1e1e;
+  color: white;
+}
+
+body.oscuro .topbar {
+  background: #000;
+}

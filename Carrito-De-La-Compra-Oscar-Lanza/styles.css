@@ -30,10 +30,6 @@ body.light{
   --shadow: 0 10px 30px rgba(10,14,20,0.12);
 }
 
-/* Dark mode (por clase: body.dark) */
-body.dark{
-  /* ya coincide con :root; se deja para que JS alterna explícitamente */
-}
 
 /* =========================
    Reset mínimo

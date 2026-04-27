@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tienda Online | Catálogo</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="logIn.js"></script>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header class="topbar">
+    <nav class="nav container">
+
+      <a class="brand" href="index.html">Tech Shop</a>
+
+      <div class="nav__links">
+        <a href="carrito.html">Carrito</a>
+
+        <button id="themeToggle" class="toggle">
+          Modo
+        </button>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container">
+
+    <h1>Catálogo</h1>
+
+    <section class="grid">
+
+      <article class="card" data-id="p1" data-name="Auriculares" data-price="25.99">
+        <h3>Auriculares</h3>
+        <p>25,99 €</p>
+        <button data-action="add">Añadir</button>
+      </article>
+
+      <article class="card" data-id="p2" data-name="Teclado" data-price="39.99">
+        <h3>Teclado</h3>
+        <p>39,99 €</p>
+        <button data-action="add">Añadir</button>
+      </article>
+
+      <article class="card" data-id="p3" data-name="Ratón" data-price="15.50">
+        <h3>Ratón</h3>
+        <p>15,50 €</p>
+        <button data-action="add">Añadir</button>
+      </article>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

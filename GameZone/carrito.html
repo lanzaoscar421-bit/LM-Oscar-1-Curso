@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GameZone | Inventario</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="barraSuperior">
+  <nav class="menu container">
+
+    <a class="logo" href="index.html">
+      <img class="logo__img" src="Imagenes/logo.jpg" alt="Logo" />
+      <span class="logo__texto">GameZone</span>
+    </a>
+
+    <div class="menu__links">
+      <a class="menu__link menu__link--activo" href="carrito.html">Inventario</a>
+      <a class="menu__link" href="login.html">Acceso</a>
+
+      <button id="modoToggle" class="toggleModo" type="button">
+        <span class="toggleModo__track">
+          <span class="toggleModo__thumb"></span>
+        </span>
+        <span class="toggleModo__texto">Tema</span>
+      </button>
+    </div>
+
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="panelGame">
+
+    <h1>Inventario de juegos</h1>
+    <p class="muted">Aquí debes añadir la lógica con JS</p>
+
+    <div id="gameCart" class="cartGame">
+
+      <div class="cartGame__head">
+        <span>Juego</span>
+        <span>Precio</span>
+        <span>Unidades</span>
+      </div>
+
+      <ul id="gameCartList" class="cartGame__list"></ul>
+
+      <div class="cartGame__total">
+        <span>Total:</span>
+        <strong id="gameTotal">0,00 €</strong>
+      </div>
+
+    </div>
+
+    <form id="couponForm" class="couponGame">
+      <label for="couponInput">Cupón</label>
+
+      <div class="couponGame__row">
+        <input id="couponInput" type="text" placeholder="Ej: GAME10" />
+        <button type="submit">Aplicar</button>
+      </div>
+
+    </form>
+
+  </section>
+
+</main>
+
+<footer class="footerGame">
+  <div class="container">
+    <p>© 2026 GameZone</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

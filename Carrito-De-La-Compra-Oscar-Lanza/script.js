@@ -9,6 +9,23 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 let descuentoAplicado = 0;
 
 
+const botoTema = document.getElementById("themeToggle");
+const body = document.body;
+
+botoTema.addEventListener("click", () => {
+
+    body.classList.toggle("light");
+    
+    if (body.classList.contains("light")){
+
+        botoTema.textContent = "Modo oscuro";
+    } else {
+
+        botoTema.textContent = "Modo claro";
+    }
+
+});
+
 function anadirAlCarrito(id, nombre, precio) {
 
     const productoExistente = carrito.find(producto => producto.id === id);
