@@ -1,3 +1,18 @@
+// =========================
+// PROTECCIÓN DE PÁGINA
+// =========================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const estaLogeado = sessionStorage.getItem("login");
+
+    if (!estaLogeado && window.location.pathname.includes("index.html")) {
+        window.location.href = "login.html";
+    }
+});
+
+
+
 //Constantes
 const tarjetas = document.querySelectorAll(".card");
 const listaCarrito = document.querySelector("#cartList");
@@ -149,5 +164,7 @@ if (formularioDescuento) {
     });
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    mostrarCarrito();
+});
 
-mostrarCarrito();

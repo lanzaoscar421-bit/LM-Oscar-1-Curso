@@ -1,0 +1,176 @@
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 20px;
+}
+
+/* =========================
+   TITULOS
+========================= */
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   CATÁLOGO
+========================= */
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* =========================
+   TARJETAS
+========================= */
+.mangaCard {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.mangaCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.mangaCard h3 {
+  margin-bottom: 10px;
+}
+
+.mangaCard p {
+  margin-bottom: 10px;
+  color: #94a3b8;
+}
+
+/* =========================
+   BOTONES
+========================= */
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btnAdd {
+  background: #22c55e;
+  color: white;
+}
+
+.btnAdd:hover {
+  background: #16a34a;
+}
+
+.btnEliminar {
+  background: #ef4444;
+  color: white;
+  margin-left: 10px;
+}
+
+.btnEliminar:hover {
+  background: #dc2626;
+}
+
+/* =========================
+   CARRITO
+========================= */
+#listaCarrito {
+  list-style: none;
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+}
+
+#listaCarrito li {
+  background: #1e293b;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* =========================
+   TOTAL
+========================= */
+p {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+#total {
+  color: #22c55e;
+  font-size: 22px;
+}
+
+/* =========================
+   CUPÓN
+========================= */
+#formCupon {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+#inputCupon {
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+#mensajeCupon {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   LINKS
+========================= */
+a {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+
+  .catalogo {
+    grid-template-columns: 1fr;
+  }
+
+  #listaCarrito li {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
