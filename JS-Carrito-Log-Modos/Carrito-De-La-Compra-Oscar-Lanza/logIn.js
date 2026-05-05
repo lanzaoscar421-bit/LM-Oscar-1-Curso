@@ -1,9 +1,5 @@
 
 
-// =========================
-// LOGIN SIMPLE
-// =========================
-
 const EMAIL_CORRECTO = "admin@pizza.com";
 const PASSWORD_CORRECTA = "1234";
 

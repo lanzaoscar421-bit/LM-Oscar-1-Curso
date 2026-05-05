@@ -1,15 +1,29 @@
-const tarjetas = document.querySelectorAll(".mangaCard")
+//Modo oscuro
+const botonTema = document.getElementById("toggleModo")
+const body = document.body
+
+
+botonTema.addEventListener("click", () =>{
+
+    body.classList.toggle("oscuro")
+
+})
+
+
+
+//Funcionalidad del carrito
+const tarjetas = document.querySelectorAll(".card")
 const listaCarrito = document.querySelector("#listaCarrito")
-
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-let descuentoAplicado = 0;
 
 
 const formularioDescuento = document.querySelector("#formCupon")
-const inputDescuento = document.querySelector("#inputCupon")
 
-function anadirAlCarrito(id,nombre,precio){
+
+let descuentoAplicado = 0;
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+function anadirAlCarrito(id, nombre, precio){
 
     const productoExistente = carrito.find(producto => producto.id === id);
 
@@ -26,33 +40,30 @@ function anadirAlCarrito(id,nombre,precio){
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
     mostrarCarrito();
-
 }
 
-tarjetas.forEach(tarjeta => {
 
-    const botonAnadir = tarjeta.querySelector(".btnAdd");
-    //Tiene que ser el boton de añadir del index
+tarjetas.forEach(tarjeta =>{
 
-    botonAnadir.addEventListener("click", () => {
+
+    const botonAnadir = document.getElementById(".btnAdd")
+
+    botonAnadir.addEventListener("click",() =>{
 
         const id = tarjeta.dataset.id;
         const nombre = tarjeta.dataset.nombre;
         const precio = parseFloat(tarjeta.dataset.precio);
-        //Esto hay que fijarse en los prodcutos
-        //data-id="m1"
-        // data-nombre="Tokyo Revengers"
-        // data-precio="8.50"
         anadirAlCarrito(id, nombre, precio);
-        
-    
-    });
-});
+    })
 
 
+})
+
+
+//Funcion para mostrar info en el carrito
 function mostrarCarrito(){
 
-    if (!listaCarrito) return;
+    if(!listaCarrito) return;
 
     listaCarrito.innerHTML = "";
 
@@ -78,9 +89,11 @@ function mostrarCarrito(){
         })
     })
 
-
+    //Calculamos el total
     calcularTotal()
+
 }
+
 
 function eliminarDelCarrito(id){
 
@@ -96,11 +109,14 @@ function eliminarDelCarrito(id){
     }
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
-     mostrarCarrito();
+    mostrarCarrito();
+    
 }
 
 
 const totalPrecio = document.getElementById("total")
+
+
 function calcularTotal(){
 
 
@@ -120,24 +136,6 @@ function calcularTotal(){
     }
 }
 
-if(formularioDescuento){
-
-        formularioDescuento.addEventListener("submit", function(evento) {
-
-        evento.preventDefault();
-
-        const codigo = inputDescuento.value.trim().toLocaleUpperCase();
-
-        if(codigo === "NOSE"){
-            descuentoAplicado = 0.10;
-        }else{
-            descuentoAplicado = 0;
-        }
-    
-        calcularTotal();
-    })
-
-}
 
 
 function pedirDatos(){
@@ -151,17 +149,28 @@ function pedirDatos(){
 
 function comprobarDatos(usuario, contraseña){
 
-    let usuarioCorrecto = "admin"
-    let contraseñaCorrecta = "1234"
+    let usuarioCorrecto = "examen"
+    let contraseñaCorrecta = "123456"
 
 
     if(usuario === usuarioCorrecto && contraseña === contraseñaCorrecta){
 
         sessionStorage.setItem("inicioSesion", "true");
+        
+        formularioDescuento.addEventListener("submit", function(evento) {
+
+        evento.preventDefault();
+
+        descuentoAplicado = 0.10;
+    
+        calcularTotal();
+    })
+
+
 
     }else{
 
-        window.location.href="error.html";
+        window.location.href="carrito.html";
     }
 
 }
@@ -169,11 +178,10 @@ function comprobarDatos(usuario, contraseña){
 
 const botonDescuento = document.getElementById("btnDescuento")
 
-document.addEventListener("click", () =>{
+botonDescuento.addEventListener("click", () =>{
 
-    pedirDatos()
-
-
+    pedirDatos();
+    comprobarDatos();
 
 })
 
