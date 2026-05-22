@@ -1,0 +1,21 @@
+body {
+    background-color: #f5f5f5;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+a:hover {
+    color: orange;
+}
+
+.card-img-top {
+    height: 130px;
+    object-fit: cover;
+}
+    .btn.btn-light{
+        margin-right: 3%;
+    }
